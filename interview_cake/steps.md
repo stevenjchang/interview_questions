@@ -1,3 +1,5 @@
+
+```ruby
 // #Steps----------
 // #Clarifying the question
 // #Generating the inputs and outputs
@@ -6,3 +8,4 @@
 // #Runtime analysis
 // #Coding
 // #Debugging 
+```
