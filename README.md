@@ -1,5 +1,20 @@
 ##Interview Questions and Prep
 
+### Javascript Questions
+
+#### 1. Stock Prices 
+
+Write a method that takes an array of historical stock prices for a single stock (prices on days 0, 1, 2...), and outputs the most profitable pair of days (indices) on which you should have first bought and then sold the stock. 
+
+For example: prices = [ 44, 30, 24, 32, 35, 30, 40, 38, 15 ] 
+# e.g., $44, $30, $24… 
+stock_picker( prices ) 
+	=> [ 2, 6 ] 
+# buy at $24, sell at $40 == $16 profit 
+	
+**** Code below here ****
+
+
 ### HackReactor Prep
 Solutions to practice problems written in Javascript.
 
