@@ -1,5 +1,42 @@
 ##Interview Questions and Prep
 
+### HackReactor Prep
+Solutions to practice problems written in Javascript.
+
+## Find the sole odd or even number.
+/*
+Given a string of even and odd numbers, find which is the sole even number or the sole odd number.
+  
+The return value should be 1-indexed, not 0-indexed.
+
+Examples :
+detectOutlierValue("2 4 7 8 10"); // => 3 - Third number is odd, while the rest of the numbers are even
+detectOutlierValue("1 10 1 1");  //=> 2 - Second number is even, while the rest of the numbers are odd
+*/
+
+// input: string of numbers, only 1 sole even or odd number 
+// output: an index of the sole even or odd number
+// process: change string to array, check if odd or even, find where there is a sole odd or even
+
+// need a way to identify which is the unique number
+// frequency hash of with keys being odd
+//   return index of valuesArray of length 
+
+
+
+function detectOutlierValue(str) {
+  var arrayFromStringInput = str.split(" ");
+  var resultsArray = arrayFromStringInput.filter(function(elem, index){
+    
+    if (elem % 2 === 0){
+      console.log(index + elem);
+      return index
+    }
+  });
+  return resultsArray;
+}
+
+detectOutlierValue("4 12 6 8");
 
 
 ### Udacity Technical Interviews Course
