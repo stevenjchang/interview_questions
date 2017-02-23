@@ -45,14 +45,65 @@ frequency hash => (expected)
       // a frequency hash of all the ranges between start and end time
 //   run through the hash, whenever it starts and stops, log it
 
-function mergeRanges(collection){
-  //create frequency hash tracker
-  var frequencyHash = {};
-  //iterator (output: )
-  //run through each array[index], start at
+var collection =
+  [
+    {startTime: 0,  endTime: 1},
+    {startTime: 3,  endTime: 5},
+    {startTime: 4,  endTime: 8},
+    {startTime: 10, endTime: 12},
+    {startTime: 9,  endTime: 10},
+];
+
+var logStartEndTimeAtOneIndex = function (arr, index){
+  if (arr[index] === undefined){
+    arr[index] = 1;
+  } else {
+    arr[index] += 1;
+  }
+};
+
+var createFrequencyHashArr = function (collection){
+  var frequencyHash = [];
+
   collection.forEach(function(value,index){
+    for (var i = value.startTime; i < value.endTime; i++){
+      logStartEndTimeAtOneIndex(frequencyHash, i);
+    }
 
   })
+  return frequencyHash;
+};
+
+function mergeRanges(collection){
+  var frequencyHash = createFrequencyHashArr(collection);
+  var result = [];
+
+  var starttime = 0;
+
+  console.log(frequencyHash);
+  for (var i = 0; i < frequencyHash.length; i++){
+    var value = frequencyHash[i];
+    var prev = frequencyHash[i-1];
+    var next = frequencyHash[i+1];
+    // console.log('index = ' + index);
+    if (next === undefined){
+      console.log('value ' + value);
+      console.log('next ' + next);
+
+      result.push({startTime: starttime, endTime: i});
+      console.log("if");
+    } else if (prev === undefined){
+      console.log('else if: ' + starttime);
+      starttime = i;
+    } else {
+      // result.push(startTime = starttime, endTime = value);
+      // result.push({startTime: starttime, endTime: i});
+      console.log('else');
+    }
+
+  }
+  console.log(result);
+  return result;
 }
 
-console.log("boo");
+mergeRanges(collection);
